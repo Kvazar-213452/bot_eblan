@@ -20,11 +20,12 @@ const client = new Client({
 });
 
 client.once('ready', () => {
-  console.log(`🤖 Бот увійшов як ${client.user?.tag}`);
+  console.log(`start ${client.user?.tag}`);
   messageBuffer[0] = getSystemMessage();
 });
 
 client.on('messageCreate', async (message: Message) => {
+  console.log("get msg")
   if (message.author.bot || message.channel.id !== TARGET_CHANNEL_ID) return;
 
   if (message.content.trim().startsWith('#')) {

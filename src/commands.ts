@@ -4,7 +4,7 @@ import { getSystemMessage, malice } from './utils';
 export let theme = '';
 export let history = 5;
 export let think = 1;
-export let ignor = true;
+export let ignor = false;
 
 export function handleCommand(
   message: Message,
@@ -23,7 +23,7 @@ export function handleCommand(
           messageBuffer[0] = getSystemMessage();
           message.reply(`Рівень злості встановлено на ${value}%`);
         } else {
-          message.reply('НАШОЛ НАХУЙ КРИТІН!');
+          message.reply('ПАШОЛ НАХУЙ КРИТІН!');
         }
       }
       break;
@@ -64,7 +64,7 @@ theme = ${theme}`);
 
     case '#on':
       ignor = true;
-      message.reply('');
+      message.reply('міг не врубати');
       break;
 
     case '#help':
@@ -77,6 +77,8 @@ theme = ${theme}`);
 #help - ця підказка
 #info - тепер налаштування бота
 #theme - теба (бота хто він)
+
+veriosn = 1
       `);
       break;
 
